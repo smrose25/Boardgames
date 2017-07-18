@@ -1,0 +1,25 @@
+<p>New Session</p>
+<form>
+  AncientOne:<br>
+  <select ng-model='aOne' required>
+    <option ng-repeat="a in ancientones">{{a}}</<option>
+  </select>
+  <br><br>
+  Won:<br>
+  <select ng-model='won' required>
+    <option>Yes</option>
+    <option>No</option>
+  </select>
+  <br><br>
+  Doom:</br>
+  <input type="text" ng-model="doom" required><br>
+  Monsters Remaining:</br>
+  <input type="text" ng-model="monsters" required><br>
+  Gates:</br>
+  <input type="text" ng-model="gates" required><br>
+  <br>
+  Mysteries Solved:</br>
+  <input type="text" ng-model="mysteriessolved" required><br>
+  <br>
+  <button ng-click="submit()">Submit</button>
+</form>

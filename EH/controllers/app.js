@@ -14,6 +14,10 @@ app.config(function($routeProvider) {
         templateUrl : "ViewSession.htm",
         controller : "viewsession"
     })
+    .when("/newsession", {
+        templateUrl : "NewSession.htm",
+        controller : "newsession"
+    })
     .when("/ancientones", {
         templateUrl : "AncientOnes.htm",
         controller : "ancientones"
@@ -49,7 +53,7 @@ app.controller('ancientones', function($scope, $http) {
 app.controller('characters', function($scope, $http) {
 
     $scope.fetch = function() {
-    $http.get(urlEH + 'characters').
+      $http.get(urlEH + 'characters').
         then(function(response) {
             $scope.characters = response.data;
         });
@@ -89,11 +93,6 @@ app.controller('sessions', function($scope, $http) {
       });
     };
 
-    $scope.submit = function() {
-
-      $scope.fetch();
-    };
-
     $scope.fetch();
 });
 
@@ -114,8 +113,42 @@ app.controller('viewsession', function($scope, $http, $routeParams) {
               $scope.monsters = response.data.monsters;
               $scope.mysteriessolved = response.data.mysteriessolved;
               $scope.players = response.data.players;
+              $scope.gates = response.data.gates;
               $scope.characters = response.data.characters;
       });
+    };
+
+    $scope.fetch();
+});
+
+app.controller('newsession', function($scope, $http) {
+
+    $scope.fetch = function() {
+      $http.get(urlEH + 'characters').
+        then(function(response) {
+            $scope.characters = response.data;
+      });
+      $http.get(url + 'players').
+          then(function(response) {
+              $scope.players = response.data;
+      });
+      $http.get(urlEH + 'ancientones').
+        then(function(response) {
+            $scope.ancientones = response.data;
+      });
+    };
+
+    $scope.addPlayer = function() {
+
+    };
+
+    $scope.addCharacter = function() {
+
+    };
+
+    $scope.submit = function() {
+
+
     };
 
     $scope.fetch();
