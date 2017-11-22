@@ -1,16 +1,16 @@
 <div>
-<p>Ancient One: {{ ancientOne}}</p>
-<p>Won: {{won}}</p>
-<p>Doom: {{doom}}</p>
-<p>Gates: {{gates}}</p>
-<p>Monsters Remaining: {{monsters}}</p>
-<p>Mysteries Solved: {{mysteriessolved}}</p>
+<p>Ancient One: {{ session.ancientOne}}</p>
+<p>Won: {{session.won}}</p>
+<p>Doom: {{session.doom}}</p>
+<p>Gates: {{session.gates}}</p>
+<p>Monsters Remaining: {{session.monsters}}</p>
+<p>Mysteries Solved: {{session.mysteriessolved}}</p>
 
 <table>
 <tr>
   <th>Players</th>
 </tr>
-<tr ng-repeat="player in players">
+<tr ng-repeat="player in session.players">
   <td>{{ player }}</td>
 </tr>
 </table>
@@ -19,7 +19,7 @@
 <tr>
   <th>Characters</th>
 </tr>
-<tr ng-repeat="char in characters">
+<tr ng-repeat="char in session.characters">
   <td>{{ char.character }}</td>
   <td>{{ char.player }}</td>
 </tr>

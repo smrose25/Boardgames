@@ -1,3 +1,4 @@
+
 <div>
 <table>
 <tr ng-repeat="name in players">
@@ -6,9 +7,9 @@
 </table>
 </div>
 <div>
-<form novalidate>
+<form>
     Name:<br>
-    <input type="text" ng-model="newName"><br>
+    <input type="text" ng-model="newName" required><br>
     <button ng-click="submit()">Submit</button>
 </form>
 </div>

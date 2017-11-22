@@ -2,7 +2,7 @@
 <a ng-href="#!newsession">New</a>
 <table>
 <tr ng-repeat="session in sessions">
-  <td><a href='#!viewsession/{{session.id}}' >View</a></td>
+  <td><button ng-click='viewsession(session.id)'>View</button></td>
   <td>{{ session.date }}</td>
   <td>{{ session.ancientOne }}</td>
   <td>{{ session.won }}</td>
