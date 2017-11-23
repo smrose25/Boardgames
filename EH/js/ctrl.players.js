@@ -7,7 +7,7 @@ angular.module('EH').controller('players', ['$scope','api', function($scope,api)
   };
 
   $scope.submit = function() {
-    api.newAPlayer($scope.newName);
+    api.newPlayer($scope.newName);
     $scope.fetch();
   };
 
