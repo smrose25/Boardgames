@@ -9,5 +9,10 @@ angular.module('EH').controller('sessions', ['$scope','$state','$stateParams','a
   $scope.viewsession = function(id) {
      $state.go('viewsession',{id:id});
   };
+
+  $scope.newsession = function() {
+     $state.go('newsession');
+  };
+
     $scope.fetch();
 }]);

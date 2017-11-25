@@ -8,6 +8,7 @@ angular.module('EH').controller('ancientones', ['$scope','api', function($scope,
 
   $scope.submit = function() {
     api.newAncientOne($scope.newName);
+    $scope.newName = "";
     $scope.fetch();
   };
 

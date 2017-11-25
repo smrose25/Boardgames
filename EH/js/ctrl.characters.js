@@ -8,6 +8,7 @@ angular.module('EH').controller('characters', ['$scope','api', function($scope,a
 
   $scope.submit = function() {
     api.newCharacter($scope.newName);
+    $scope.newName = "";
     $scope.fetch();
   };
 

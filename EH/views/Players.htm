@@ -1,15 +1,17 @@
-
 <div>
-<table>
-<tr ng-repeat="name in players">
-  <td>{{ name }}</td>
-</tr>
-</table>
+  <form novalidate class="form-inline">
+    <div class="form-group">
+      <label for="nameInput">New Player:</label>
+      <input type="text" ng-model="newName" class="form-control" placeholder="Name" id="nameInput">
+    </div>
+    <button type="submit" class="btn btn-default" ng-click="submit()">Submit</button>
+  </form>
 </div>
+</br>
 <div>
-<form>
-    Name:<br>
-    <input type="text" ng-model="newName" required><br>
-    <button ng-click="submit()">Submit</button>
-</form>
+  <ul class="list-group">
+    <li class="list-group-item" ng-repeat="name in players">
+      {{ name }}
+    </li>
+  </ul>
 </div>

@@ -1,11 +1,21 @@
 <div>
-<a ng-href="#!newsession">New</a>
-<table>
-<tr ng-repeat="session in sessions">
-  <td><button ng-click='viewsession(session.id)'>View</button></td>
-  <td>{{ session.date }}</td>
-  <td>{{ session.ancientOne }}</td>
-  <td>{{ session.won }}</td>
-</tr>
+<button ng-click='newsession()' type="button" class="btn btn-primary">New</button>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Date</th>
+      <th>Ancient One</th>
+      <th>Won</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="session in sessions">
+      <td><button ng-click='viewsession(session.id)' type="button" class="btn btn-default">View</button></td>
+      <td>{{ session.date }}</td>
+      <td>{{ session.ancientOne }}</td>
+      <td>{{ session.won }}</td>
+    </tr>
+  </tbody>
 </table>
 </div>

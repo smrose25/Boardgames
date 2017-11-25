@@ -1,43 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>	Home </title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.6/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.6/angular-animate.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic&amp;subset=latin" rel="stylesheet" type="text/css" data-mincss="ignore">
-    <link rel="stylesheet" href="style.css" />
-</head>
+  <head>
+    <title>	Eldritch Horror </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.6/angular.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.6/angular-animate.min.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic&amp;subset=latin" rel="stylesheet" type="text/css" data-mincss="ignore">
+      <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body ng-app='EH' ng-cloak>
+  <body ng-app='EH' ng-cloak>
+    <div class="container">
+      <div class="row col-sm-12 col-md-8 col-md-offset-2">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid" ng-controller="nav">
+              <button class="btn btn-link navbar-btn" ng-click="goSessions()" >Sessions</button>
+              <button class="btn btn-link navbar-btn" ng-click="goAncientOnes()" >Ancient Ones</button>
+              <button class="btn btn-link navbar-btn" ng-click="goCharacters()" >Characters</button>
+              <button class="btn btn-link navbar-btn" ng-click="goPlayers()" >Players</button>
+          </div>
+        </nav>
 
-<div class="container">
-    <div class="row col-sm-12 col-md-8 col-md-offset-2">
-        <div class="page-header" ng-controller="nav">
-          <button ng-click="goSessions()">Sessions</button>
-          <button ng-click="goAncientOnes()">AncientOnes</button>
-          <button ng-click="goCharacters()">Characters</button>
-          <button ng-click="goPlayers()">Players</button>
-        </div>
         <main ui-view></main>
-    </div>
-</div>
 
-<script src="js/app.module.js"></script>
-<script src="js/app.routes.js"></script>
-<script src="js/service.api.js"></script>
-<script src="js/ctrl.ancientones.js"></script>
-<script src="js/ctrl.characters.js"></script>
-<script src="js/ctrl.players.js"></script>
-<script src="js/ctrl.sessions.js"></script>
-<script src="js/ctrl.viewsession.js"></script>
-<script src="js/ctrl.newsession.js"></script>
-<script src="js/ctrl.nav.js"></script>
-</body>
+      </div>
+    </div>
+
+    <script src="js/app.module.js"></script>
+    <script src="js/app.routes.js"></script>
+    <script src="js/service.api.js"></script>
+    <script src="js/ctrl.ancientones.js"></script>
+    <script src="js/ctrl.characters.js"></script>
+    <script src="js/ctrl.players.js"></script>
+    <script src="js/ctrl.sessions.js"></script>
+    <script src="js/ctrl.viewsession.js"></script>
+    <script src="js/ctrl.newsession.js"></script>
+    <script src="js/ctrl.nav.js"></script>
+  </body>
 </html>

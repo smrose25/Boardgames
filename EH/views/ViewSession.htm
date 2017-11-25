@@ -1,28 +1,58 @@
-<div>
-<p>Ancient One: {{ session.ancientOne}}</p>
-<p>Won: {{session.won}}</p>
-<p>Doom: {{session.doom}}</p>
-<p>Gates: {{session.gates}}</p>
-<p>Monsters Remaining: {{session.monsters}}</p>
-<p>Mysteries Solved: {{session.mysteriessolved}}</p>
-
-<table>
-<tr>
-  <th>Players</th>
-</tr>
-<tr ng-repeat="player in session.players">
-  <td>{{ player }}</td>
-</tr>
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Won</th>
+      <th>Ancient One</th>
+      <th>Doom</th>
+      <th>Gates</th>
+      <th>Monsters</th>
+      <th>Mysteries Solved</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{session.date}}</td>
+      <td>{{session.won}}</td>
+      <td>{{session.ancientOne}}</td>
+      <td>{{session.doom}}</td>
+      <td>{{session.gates}}</td>
+      <td>{{session.monsters}}</td>
+      <td>{{session.mysteriessolved}}</td>
+    </tr>
+  </tbody>
 </table>
 
-<table>
-<tr>
-  <th>Characters</th>
-</tr>
-<tr ng-repeat="char in session.characters">
-  <td>{{ char.character }}</td>
-  <td>{{ char.player }}</td>
-</tr>
+</br>
+
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Players</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td ng-repeat="player in session.players">{{ player }}</td>
+    </tr>
+  </tbody>
 </table>
 
-</div>
+</br>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Player</th>
+      <th>Character</th>
+      <th>Survived</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="char in session.characters">
+      <td>{{ char.player }}</td>
+      <td>{{ char.character }}</td>
+      <td>{{ char.survived }}</td>
+    </tr>
+  </tbody>
+</table>
