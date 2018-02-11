@@ -1,43 +1,74 @@
 <h3>New Session</h3>
 </br>
-  <form>
-    <div class="form-group">
-      <div class="checkbox">
-        <label><input type="checkbox" ng-model='session.won' id="won"> Won</label>
+<div class="row">
+  <div class="col-sm-4">
+    <form>
+      <div class="form-group row">
+        <div class="form-group">
+          <div class="checkbox">
+            <label><input type="checkbox" ng-model='session.won' ng-false-value="0" ng-true-value="1" id="won"> Won</label>
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="date">Date: </label>
+            <input type="text" class="form-control" ng-model='session.date' id="date" placeholder="MM/DD/YYYY" required>
+        </div>
+
+        <div class="form-group">
+            <label for="aOne">Ancient One: </label>
+            <select class="form-control" ng-model='session.ancientone' id="aOne" required>
+              <option ng-repeat="a in ancientones">{{a}}</<option>
+            </select>
+        </div>
+        <div>
+          <label for="doom">Doom:</label>
+          <input type="text" class="form-control" ng-model="session.doom" id='doom' required>
+        </div>
+        <div>
+          <label for="monsters">Monsters:</label>
+          <input type="text" class="form-control" ng-model="session.monsters" id="monsters" required>
+        </div>
+        <div>
+          <label for="gates">Gates:</label>
+          <input type="text" class="form-control" ng-model="session.gates" id="gates" required>
+        </div>
+        <div>
+          <label for="mysteriessolved">Mysteries Solved:</label>
+          <input type="text" class="form-control" ng-model="session.mysteries" id="mysteriessolved" required>
+        </div>
+        <div>
+          <label for="rumourssolved">Rumours Solved:</label>
+          <input type="text" class="form-control" ng-model="session.rumours" id="rumourssolved" required>
+        </div>
       </div>
-    </div>
-
-    <div class="form-group">
-        <label for="date">Date: </label>
-        <input type="text" class="form-control" ng-model='session.date' id="date" placeholder="MM/DD/YYYY" required>
-    </div>
-
-    <div class="form-group">
-        <label for="aOne">Ancient One: </label>
-        <select class="form-control" ng-model='session.aOne' id="aOne" required>
-          <option ng-repeat="a in ancientones">{{a}}</<option>
-        </select>
-    </div>
-  </form>
-
-<form>
-  <div class="form-group row">
-    <div class="col-xs-2">
-      <label for="doom">Doom:</label>
-      <input type="text" class="form-control" ng-model="session.doom" id='doom' required>
-    </div>
-    <div class="col-xs-2">
-      <label for="monsters">Monsters:</label>
-      <input type="text" class="form-control" ng-model="session.monsters" id="monsters" required>
-    </div>
-    <div class="col-xs-2">
-      <label for="gates">Gates:</label>
-      <input type="text" class="form-control" ng-model="session.gates" id="gates" required>
-    </div>
-    <div class="col-xs-3">
-      <label for="mysteriessolved">Mysteries Solved:</label>
-      <input type="text" class="form-control" ng-model="session.mysteriessolved" id="mysteriessolved" required>
-    </div>
+    </form>
   </div>
-  <button type="submit" class="btn btn-default" ng-click="submit()">Submit</button>
-</form>
+  <div class="col-sm-8">
+    <div>
+      <label for="characterTable">Characters:</label>
+      <table class="table table-bordered">
+          <tr ng-repeat="i in session.characters" ng-model="session.characters">
+            <td>{{i.index}}</td>
+            <td>
+              <select class="form-control" id="sPlayers" ng-model="i.player">
+                <option ng-repeat="p in players">{{p}}</<option>
+              </select>
+            </td>
+            <td>
+              <select class="form-control" id="sCharacters" ng-model="i.character" required>
+                <option ng-repeat="c in characters">{{c}}</<option>
+              </select>
+            </td>
+            <td>
+              <div class="checkbox">
+                <label><input type="checkbox" ng-model='i.survived' ng-false-value="0" ng-true-value="1" id="won"> Survived?</label>
+              </div>
+            </td>
+          </tr>
+      </table>
+      <button ng-click="addCharacter()" class="btn btn-primary" id="add">Add</button>
+      <button ng-click="removeCharacter()" class="btn btn-danger" id="remove">Remove</button>
+  </div>
+</div>
+</div>
+<button type="submit" class="btn btn-default" ng-click="submit()">Submit</button>
